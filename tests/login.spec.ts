@@ -12,12 +12,14 @@ test('login test', async() => {
 
    const email:Locator = page.locator("#input-email");
    const password:Locator = page.locator("#input-password");
-   const loginButton:Locator = page.locator("");
+   const loginButton:Locator = page.locator("[value='Login']");
 
+   await email.fill("pwtest@opencart.com");
+   await password.fill("playwright@123");
+   await loginButton.click();
 
+   console.log("Page Title : ", page.title());
 
-   
-
-
+   await page.screenshot({path: 'homepage.png'})
 
 })
