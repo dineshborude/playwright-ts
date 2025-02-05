@@ -27,5 +27,19 @@ test('locator stratergies', async () => {
     const header = await registerUser.textContent();
     console.log(header);
 
+    // CSS
+    const email:Locator = await page.locator('css=input#input-email');
+    const lastname:Locator = await page.locator('css=input[name=lastname]');
 
+    await email.fill('danny@yopmail.com');
+    await lastname.fill('Singh');
+
+    const checkbox = await page.locator('css=input[type=checkbox]')
+    await checkbox.click();
+    console.log("Checked");
+
+    // XPATH 
+    
+    const searchbox:Locator = await page.locator("xpath=//input[@name='search' and @placeholder='Search']");
+    await searchbox.fill('iPhone');
 })
