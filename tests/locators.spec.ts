@@ -1,4 +1,4 @@
-import test, { Browser, firefox, Locator, Page } from "playwright/test";
+import test, { Browser, expect, firefox, Locator, Page } from "playwright/test";
 
 test('locator stratergies', async () => {
 
@@ -17,6 +17,15 @@ test('locator stratergies', async () => {
     await firstName2.clear();
     await firstName2.fill("Rambo");
 
+    // Class Name
 
-    
+    const logo:Locator = await page.locator('.img-responsive');
+    console.log(await logo.isVisible());
+
+    // Text
+    const registerUser:Locator = await page.locator('text=Register Account');
+    const header = await registerUser.textContent();
+    console.log(header);
+
+
 })
