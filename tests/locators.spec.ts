@@ -42,7 +42,7 @@ test('locator stratergies', async () => {
     
     const searchbox:Locator = await page.locator("xpath=//input[@name='search' and @placeholder='Search']");
     await searchbox.fill('iPhone');
-
+g
     // Data Test ID
     
 })
