@@ -2,6 +2,9 @@ import { test, expect, Locator } from "playwright/test";
 
 test('dropdown handling', async ({ page }) => {
    const url = "https://www.saucedemo.com/";
+   
+   await page.goto(url, { waitUntil: "load" }); 
+
 
    const username = "standard_user";
    const password = "secret_sauce";
