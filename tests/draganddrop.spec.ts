@@ -1,20 +1,21 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, FrameLocator, Locator } from "playwright/test";
 
 test("drag and drop test", async ({ page }) => {
-    const url = "https://jqueryui.com/draggable/";
+    const url = "https://jqueryui.com/droppable/";
     
-    // 1️⃣ Go to the page
+    // Open the page
     await page.goto(url, { waitUntil: "load" });
 
-    // 2️⃣ Wait for iframe and get the frame
-    const frame = await page.frameLocator("iframe").first();
+    // Get the iframe
+    const frame: FrameLocator = page.frameLocator(".demo-frame");
 
-    // 3️⃣ Locate the draggable element inside the iframe
-    const dragElement = frame.locator("#draggable"); // ✅ Correct ID-based locator
+    // Get the drag & drop elements inside the iframe
+    const drag: Locator = frame.locator("#draggable");
+    const drop: Locator = frame.locator("#droppable");
 
-    // 4️⃣ Drag and drop action
-    await dragElement.dragTo(frame.locator("#draggable"), { force: true });
+    // Perform drag and drop action
+    await drag.dragTo(drop);
 
-    // 5️⃣ Optional: Wait to see the action
+    // Optional: Wait to observe
     await page.waitForTimeout(3000);
 });
