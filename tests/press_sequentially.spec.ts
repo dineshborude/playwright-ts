@@ -7,6 +7,8 @@ test('type slowly test', async ({page}) => {
     await page.goto(url,{waitUntil:'load'});
     await searchbox.pressSequentially('iphone',{delay:500});
 
+    await searchbox.type
+
 
 
 })
