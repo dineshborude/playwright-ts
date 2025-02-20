@@ -49,11 +49,11 @@ Main folder containing project files.
 ```sh
 git clone https://github.com/dineshborude/playwright-ts.git
 cd playwright-ts
+```
 
-
----
 
 ## **🚀 Installation & Setup**
+
 ### **1️⃣ Install Dependencies**
 ```sh
 npm install
