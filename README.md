@@ -1,4 +1,4 @@
-# Playwright Framework
+# Playwright Framework [DEV - IN PROGRESS]
 
 This repository contains a **Playwright framework setup** for automated testing.  
 The framework is structured as follows:
