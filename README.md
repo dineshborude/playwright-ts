@@ -84,26 +84,4 @@ npx playwright show-report
 
 
 ---
-<<<<<<< HEAD
-=======
 
-## 2. What Does Playwright Use?  
-✅ **Playwright uses full browsers** (Chromium, Firefox, WebKit).  
-✅ These browsers internally rely on their **browser engines** (Blink, Gecko, WebKit).  
-❌ Playwright **does not** directly interact with browser engines—it controls browsers that embed them.  
-
-
-#### Example in Playwright
-
-When you run:  
-
-```js
-const { chromium } = require('@playwright/test');
-const browser = await chromium.launch();
-```
-Playwright launches Chromium (a browser).
-Chromium then uses the Blink engine internally.
-So, Playwright interacts with browsers, which rely on their engines.
-
----
->>>>>>> 6cb57c09cd7a21922c85016b697068d86738b660
