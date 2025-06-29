@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  pull_request: # Optional but useful
+  pull_request:
     branches:
       - main
 
@@ -19,20 +19,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' 
+          node-version: '18'
 
-      - name: Install dependencies
-        run: npm ci --silent
+      - name: Install dependencies (quietly)
+        run: npm ci --silent > /dev/null 2>&1
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      - name: Install Playwright Browsers (quietly)
+        run: npx playwright install --with-deps > /dev/null 2>&1
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --reporter=html
 
-      - name: Upload HTML report on failure
-        if: failure()
+      - name: Upload Playwright HTML Report (always)
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-html-report
           path: playwright-report
