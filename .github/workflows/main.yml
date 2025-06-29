@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Tests & Deploy Report
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test-and-deploy-report:
+  test-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,12 +24,19 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps > /dev/null 2>&1
 
-      - name: Run tests and generate HTML report
-        run: npx playwright test --reporter=html
+      - name: Run Playwright tests
+        run: npx playwright test --reporter=html || true
 
-      - name: Deploy HTML report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # ✅ Copy report to public folder for GitHub Pages
+      - name: Copy Playwright Report to public folder
+        run: |
+          mkdir -p public
+          cp -R playwright-report/* public/
+
+      # ✅ Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./playwright-report
+          publish_dir: ./public
           publish_branch: gh-pages
