@@ -4,7 +4,7 @@ import { test,expect, chromium, Browser, Page, Locator, BrowserContext } from "@
 
 test('browser context test', async() => {
 
-   const browser:Browser = await chromium.launch({headless:false});
+   const browser:Browser = await chromium.launch({headless:true});
 
    //browser 1 context
    const context1:BrowserContext=await browser.newContext();

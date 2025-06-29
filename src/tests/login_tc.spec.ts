@@ -4,7 +4,7 @@ import { credentials } from '../config/credentials';
 import { LoginPage } from '../pages/LoginPage';
 
 test('Login test for multiple users using separate contexts', async () => {
-  const browser: Browser = await chromium.launch({ headless: false, channel: 'chrome' });
+  const browser: Browser = await chromium.launch({ headless: true, channel: 'chrome' });
 
   // --------- Context 1: standard_user ---------
   const context1: BrowserContext = await browser.newContext();

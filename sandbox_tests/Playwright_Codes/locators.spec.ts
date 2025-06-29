@@ -2,7 +2,7 @@ import test, { Browser, expect, firefox, Locator, Page } from "playwright/test";
 
 test('locator stratergies', async () => {
 
-    const browser:Browser =  await firefox.launch({headless:false});
+    const browser:Browser =  await firefox.launch({headless:true});
     const page:Page = await browser.newPage();
 
     const url = "https://naveenautomationlabs.com/opencart/index.php?route=account/register";

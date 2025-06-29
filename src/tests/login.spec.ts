@@ -3,7 +3,7 @@ import {webkit, chromium, firefox} from 'playwright';
 
 test.skip('login test', async()=> {
 
-    const browser:Browser = await firefox.launch({headless:false});
+    const browser:Browser = await firefox.launch({headless:true});
     const page:Page = await browser.newPage();
 
     await page.goto('https://www.saucedemo.com/v1/index.html');
