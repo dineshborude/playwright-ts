@@ -80,7 +80,7 @@ npx playwright show-report
 ### **4️⃣ Explore the Source Code**
 - Modify test cases in the `tests/` directory.
 - Add new Page Objects in the `pages/` directory.
-- Use `testdata/` for external test data.
+- Use `testdata/` for external test data
 
 
 ---
