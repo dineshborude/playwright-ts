@@ -27,13 +27,13 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --reporter=html || true
 
-      # ✅ Copy report to public folder for GitHub Pages
+      # Copy report to public folder for GitHub Pages
       - name: Copy Playwright Report to public folder
         run: |
           mkdir -p public
           cp -R playwright-report/* public/
 
-      # ✅ Deploy to GitHub Pages
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
