@@ -17,6 +17,6 @@ test("file upload", async ({ page }) => {
 
   //deselect file
   await fileInput.setInputFiles([]);
-  await page.waitForTimeout(5000);
+  await page.waitForTimeout(6000);
 
 });
