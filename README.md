@@ -17,7 +17,7 @@ The framework is structured as follows:
 
 ---
 
-### **🔹 Continuous Integration (CI/CD)**
+### **🔹 Continuous Integration (CI/CD) **
 - **`.github/workflows/main.yml`** → GitHub Actions workflow file for running tests automatically.
 
 ---
