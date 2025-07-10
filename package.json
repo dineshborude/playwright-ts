@@ -10,8 +10,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^29.7.0",
+  "jest-playwright-preset": "^4.0.0",
     "@playwright/test": "^1.50.0",
     "@types/node": "^22.10.10",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "@types/jest": "^29.5.4",
+    "playwright": "^1.45.1",
+    "ts-jest": "^29.1.1"
   }
 }
