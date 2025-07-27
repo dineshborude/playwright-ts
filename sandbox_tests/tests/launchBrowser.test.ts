@@ -2,9 +2,9 @@ import { chromium } from "playwright";
 
 describe('open browser', () => {
 
-    test('Open Letcode', async () => {
+    test.only('Open Letcode', async () => {
 
-        const browser = await chromium.launch();
+        const browser = await chromium.launch({headless:false});
         const context = await browser.newContext();
 
         const page = await context.newPage();
