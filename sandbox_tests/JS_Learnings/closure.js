@@ -15,4 +15,4 @@ function outer() {
 }
 
 outer();
-console.log(`OUTER SCOPE's ${username}`)
+console.log(`OUTER SCOPE ${username}`)
