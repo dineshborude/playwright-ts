@@ -23,7 +23,7 @@ test.skip('login test', async()=> {
      await expect(page.locator('.product_label')).toHaveText('Products');
 
     // Take screenshot
-     await page.screenshot({ path: 'productPage1.png' });
+     await page.screenshot({ path: 'productPage1232.png' });
 
     browser.close();
 
